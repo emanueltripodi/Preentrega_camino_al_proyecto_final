@@ -1,3 +1,5 @@
+// declaro mi array de productos
+
 let productos = [
     { id:1, nombre:"Pupy", precio:0, descripcion:"Labrador Retriever: Amigable y leal, perfecto para familias activas.", imagen:"https://static.vecteezy.com/system/resources/previews/023/651/797/original/small-labrador-puppy-on-transparent-background-created-with-generative-ai-png.png", size:"medium"},
     { id:2, nombre:"Camilo", precio:0, descripcion:"Bulldog Francés: Carismático y de bajo mantenimiento, ideal para apartamentos.", imagen:"https://elarcadelfrances.com/wp-content/uploads/2022/08/zyro-image.png",size: "small"},
@@ -83,10 +85,23 @@ const estaEnElCarrito = (id) => {
         contenidoHTML += `<tr>
         <td><img src="${producto.imagen}"  alt="${producto.nombre}" width="80"></td>
         <td>${producto.nombre}</td>
-        <td><img src="../imagenes/casa vacia.svg" alt="eliminar" width="24"></td>
+        <td><button class="btn btn-danger" onclick="eliminarDelCarrito(${producto.id})"><img src="../imagenes/casa vacia.svg" alt="eliminar" width="24"></button></td>
         </tr>`;
     });
  
     contenidoHTML += `</table>`;
     document.getElementById("contenido").innerHTML = contenidoHTML;
+}
+
+//eliminar del carrito
+
+const eliminarDelCarrito = (id) => {
+    const carrito = cargarCarritoLS();
+    const productoIndex = carrito.findIndex(item => item.id === id);
+
+    if (productoIndex !== -1) {
+        carrito.splice(productoIndex, 1);
+        guardarcarritoADS(carrito);
+        renderCarrito();
+    }
 }
