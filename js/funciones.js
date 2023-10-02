@@ -1,5 +1,3 @@
-// declaro mi array de productos
-
 let productos = [
     { id:1, nombre:"Pupy", precio:0, descripcion:"Labrador Retriever: Amigable y leal, perfecto para familias activas.", imagen:"https://static.vecteezy.com/system/resources/previews/023/651/797/original/small-labrador-puppy-on-transparent-background-created-with-generative-ai-png.png", size:"medium"},
     { id:2, nombre:"Camilo", precio:0, descripcion:"Bulldog Francés: Carismático y de bajo mantenimiento, ideal para apartamentos.", imagen:"https://elarcadelfrances.com/wp-content/uploads/2022/08/zyro-image.png",size: "small"},
