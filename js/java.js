@@ -1,2 +1,0 @@
-guardarperritosADS(productos);
-renderproductos();
